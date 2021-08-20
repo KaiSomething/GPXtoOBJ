@@ -16,3 +16,10 @@ Interpolation types are as follows:
 1. cubic
 2. linear (recomended)
 3. nearest
+
+---
+## Notes
+
+- This program works best on GPX files with similar heights and widths
+- This is my first time publishing any code so sorry in advance if anything goes wrong.
+- Hope this program helps you as much as it helped me!
