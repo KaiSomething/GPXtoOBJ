@@ -96,8 +96,8 @@ for track in gpx.tracks:
 for i in range(len(x)):
     #x[i] = min(math.floor(((x[i]-leastx)/(mostx-leastx))*100), 99)
     #y[i] = min(math.floor(((y[i]-leasty)/(mosty-leasty))*100), 99)
-    xx = min(math.floor(((x[i]-leastx)/(mostx-leastx))*100), 99)
-    yy = min(math.floor(((y[i]-leasty)/(mosty-leasty))*100), 99)
+    xx = min(math.floor(((x[i]-leastx)/(mostx-leastx))*width), width-1)
+    yy = min(math.floor(((y[i]-leasty)/(mosty-leasty))*height), height-1)
     mesh_map[yy][xx] = elev[i]
 m1 = mesh_map
 
