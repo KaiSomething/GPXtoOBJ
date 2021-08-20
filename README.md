@@ -14,6 +14,7 @@ GPXtoOBJ.exe <gpx file path> <height> <width> <interpolation type>
 ```
 Height and width refer to the grid size the GPX file will be projected onto, higher numbers will result in higher detail.
 Interpolation types are as follows:
+
 0. cubic
 1. linear (recomended)
 2. nearest
