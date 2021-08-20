@@ -40,7 +40,7 @@ def MapToObj(m, obj):
                 verts.append((j, m[i][j], i))
             tex.append((j*tex_size, i*tex_size, 0))
             if((not i == len(m)-1) and (not j == len(m[0])-1)):
-                pairs.append((i*len(m)+j+1, i*len(m)+j+2, (i+1)*len(m)+j+1))
+                pairs.append((i*len(m)+j+1, (i+1)*len(m)+j+1, i*len(m)+j+2))
                 pairs.append(((i+1)*len(m)+j+2, i*len(m)+j+2, (i+1)*len(m)+j+1))
 
     out = "\n"
@@ -50,8 +50,9 @@ def MapToObj(m, obj):
     for i in tex:
         out += "vt {0} {1} {2}\n".format(format(i[0], ".4f"), format(i[1], ".4f"), format(i[2], ".4f"))
     out+="\nvn 0.0000 1.0000 0.0000\n\no Mesh\ng Mesh\n"
-    for i in pairs:
-        out += "f {0}/{0}/1 {1}/{1}/1 {2}/{2}/1\n".format(i[0], i[1], i[2])
+    for j, i in enumerate(pairs):
+        print(j, i)
+        out += "f {0}/{0}/1 {1}/{1}/1 {2}/{2}/1\n".format(i[0], i[1], i[2])           
     
     f = open(obj, "w")
     f.write(out)
